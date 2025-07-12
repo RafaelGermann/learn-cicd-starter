@@ -31,4 +31,4 @@ jobs:
         run: 'gcloud info'
 
       - name: build and push image to GCP
-        run:  gcloud builds submit --tag us-central1-docker.pkg.dev/heroic-bonbon-465714-s1/notely-ar-repo .
+        run:  gcloud builds submit --tag us-central1-docker.pkg.dev/heroic-bonbon-465714-s1/notely-ar-repo/notely .
