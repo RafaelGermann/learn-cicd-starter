@@ -30,5 +30,8 @@ jobs:
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
 
-      - name: build and push image to GCP
+      - name: Build and push Docker image
         run:  gcloud builds submit --tag us-central1-docker.pkg.dev/heroic-bonbon-465714-s1/notely-ar-repo/notely .
+        
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image us-central1-docker.pkg.dev/heroic-bonbon-465714-s1/notely-ar-repo/notely --region us-central1 --allow-unauthenticated --project heroic-bonbon-465714-s1 --max-instances=4
